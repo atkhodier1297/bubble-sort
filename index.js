@@ -2,19 +2,21 @@
 // Poor sorting alg and is mainly used as an intro to sorting algs.
 
 function bubbleSort(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    let swapped;
-    do {
-      swapped = false;
-      if (arr[i] > arr[i - 1]) {
+  let swapped;
+  do {
+    swapped = false;
+    for (let i = 0; i < arr.length - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
         let temp = arr[i];
         arr[i] = arr[i + 1];
         arr[i + 1] = temp;
         swapped = true;
       }
-    } while (swapped);
-  }
+    }
+  } while (swapped);
 }
 
-const array1 = [1,5,10,15,20]
-console.log(bubbleSort(array1))
+const array = [24,30,1,2,99,100]
+bubbleSort(array)
+
+console.log(array)
